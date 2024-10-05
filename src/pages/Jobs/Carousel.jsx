@@ -10,7 +10,7 @@ const Carousel = () => {
       try {
         const jobs = await Promise.all(
           jobFolders.map(async (folder) => {
-            const response = await fetch(`/content/jobs/${folder}/index.md`);
+            const response = await fetch(`../../../content/jobs/${folder}/index.md`);
             const text = await response.text();
             
             const lines = text.split('\n').filter(line => line.trim() !== '');
