@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Cards from "./Cards";
-import { use } from "marked";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+    });
+  }, []);
   const [projectsData, setProjectsData] = useState([]);
   useEffect(() => {
     const fetchProjectsData = async () => {
@@ -51,7 +56,7 @@ const Projects = () => {
     fetchProjectsData();
   }, []);
   return (
-    <section className=" bg-black h-max mt-8 text-white" id="projects">
+    <section className=" bg-black h-max mt-8 text-white" id="projects" data-aos="fade-up">
       <p className=" ml-8 text-xs bg-white/65 p-2 rounded-xl w-fit text-white">
         ⚪ Projects
       </p>

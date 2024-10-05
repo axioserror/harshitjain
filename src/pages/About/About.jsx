@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect }  from "react";
 import about from "../../assets/about.png";
 import { RxTriangleRight } from "react-icons/rx";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const About = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+    });
+  }, []);
+
   const skills = [
     "JavaScript (ES6+)",
     "TypeScript",
@@ -11,7 +18,7 @@ const About = () => {
     "MongoDB","Restful API",  "MLOps", "Python", "Java", "C++", "HTML/CSS"," Linux", "GitHub","Jupyter", "Google Cloud Platform",
   ];
   return (
-    <section className="text-white mb-5" id="about">
+    <section className="text-white mb-5" id="about" data-aos="fade-up">
       <p className="mt-8 ml-8 text-xs bg-white/65 p-2 rounded-xl w-fit">
         ⚪ About
       </p>

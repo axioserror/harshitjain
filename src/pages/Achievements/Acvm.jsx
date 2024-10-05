@@ -1,8 +1,15 @@
-import React from "react";
-
+import React,{useEffect} from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Acvm = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // Animation duration
+    });
+  }, []);
   return (
-    <section id="achievements" className="text-white  h-screen">
+    
+    <section id="achievements" className="text-white  h-screen" data-aos="fade-up">
       <p className="mt-8 ml-8 text-xs bg-white/65 p-2 rounded-xl w-fit text-white">
         ⚪ Achievements
       </p>
