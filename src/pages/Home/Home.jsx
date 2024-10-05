@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <section
       id='home'
-      className="relative min-h-screen text-white overflow-hidden mt-16 md:mt-24"
+      className="relative min-h-screen text-white bg-repea mt-16 md:mt-24 "
       style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover' }}
     >
       {/* Background grid */}

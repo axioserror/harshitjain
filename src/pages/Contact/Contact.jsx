@@ -139,15 +139,15 @@ const Contact = () => {
 
 
   return (
-    <section id="contact">
+    <section id="contact" className="w-full">
       <p className="mt-8 ml-8 text-xs bg-white/65 p-2 rounded-xl w-fit text-white">
         ⚪ Contact Me
       </p>
-      <div className="flex md:flex-row flex-col h-screen m-8 bg-black text-white">
+      <div className="flex md:flex-row flex-col h-screen m-8 min-w-full bg-black text-white">
         <div className="md:w-1/2  p-8 flex flex-col justify-center items-center">
           <form
             onSubmit={handleSubmit}
-            className="p-6 font-inconsolata w-3/4  text-base font-medium bg-white/85  rounded-lg text-black"
+            className="p-6 font-inconsolata md:w-3/4 w-full  text-base font-medium bg-white/85  rounded-lg text-black"
           >
             <div>
               <label htmlFor="name" className="block text-lg">
@@ -198,7 +198,7 @@ const Contact = () => {
           </form>
         </div>
 
-        <div className="md:w-1/2 w-full order-first md:order-last p-8 flex flex-col justify-center overflow-hidden contact-scroll">
+        <div className="md:w-1/2 w-full order-first md:order-last p-8 flex flex-col justify-center overflow-visible md:overflow-hidden contact-scroll">
           <div className="contact-scroll-content">
             {contactInfo.map((info, index) => (
               <div

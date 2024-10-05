@@ -18,7 +18,7 @@ const About = () => {
     "MongoDB","Restful API",  "MLOps", "Python", "Java", "C++", "HTML/CSS"," Linux", "GitHub","Jupyter", "Google Cloud Platform",
   ];
   return (
-    <section className="text-white mb-5" id="about" data-aos="fade-up">
+    <section className="text-white mb-8" id="about" data-aos="fade-up">
       <p className="mt-8 ml-8 text-xs bg-white/65 p-2 rounded-xl w-fit">
         ⚪ About
       </p>
@@ -30,7 +30,7 @@ const About = () => {
             className=" rounded-lg shadow-md shadow-slate-200/10 mb-6 "
           />
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2 w-3/4 ">
           <h1 className="font-normal text-6xl font-poppins p-4 text-center">
             Harshit Jain
           </h1>
@@ -60,7 +60,7 @@ const About = () => {
           </p>
           <br />
           <h3 className=" font-light font-poppins text-xl ">Skills:</h3>
-          <ul className=" mx-10 text-justify text-nowrap grid grid-rows-3 grid-cols-4 w-2/2 gap-2 ">
+          <ul className="md:mx-10 text-justify text-nowrap grid md:grid-rows-3 grid-rows-6 md:grid-cols-4 grid-cols-3 md:w-2/2 md:gap-2 md:gap-x-2 gap-x-36">
             {skills &&
               skills.map((skill, i) => (
                 <li

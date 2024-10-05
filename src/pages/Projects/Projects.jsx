@@ -15,7 +15,7 @@ const Projects = () => {
       try {
         const projects = await Promise.all(
           projectFolders.map(async (folder) => {
-            const response = await fetch(`../../../content/Projects/${folder}/index.md`);
+            const response = await fetch(`../../../content/ProjectsFile/${folder}/index.md`);
             const text = await response.text();
             const lines = text.split("\n").filter((line) => line.trim() !== "");
             let project = {

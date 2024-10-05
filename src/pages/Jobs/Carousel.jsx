@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cards from "./Cards";
+
 const Carousel = () => {
   const [activeItem, setActiveItem] = useState(0);
   const [jobsData, setJobsData] = useState([]);
@@ -58,7 +59,7 @@ const Carousel = () => {
   return (
     <div id="indicators-carousel" className="relative w-full">
       {/* Carousel wrapper */}
-      <div className="relative overflow-hidden rounded-lg">
+      <div className="relative rounded-lg">
         {jobsData.map((job, index) => (
           <div key={index} className={`duration-700 ease-in-out ${activeItem === index ? 'block' : 'hidden'}`}>
             <Cards {...job} />
@@ -67,7 +68,7 @@ const Carousel = () => {
       </div>
 
       {/* Control container */}
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex justify-between items-center mt-4 md:gap-0 gap-96">
         {/* Slider indicators */}
         <div className="flex space-x-3">
           {jobsData.map((_, index) => (

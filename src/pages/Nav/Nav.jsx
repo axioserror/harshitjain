@@ -4,6 +4,7 @@ import logo from '../../assets/HarshitJain.png';
 const Nav = () => {
   const [activeSection, setActiveSection] = useState('#Home');
 
+  // Add a scroll listener to track active section
   useEffect(() => {
     const sections = document.querySelectorAll('section');
     const options = {
