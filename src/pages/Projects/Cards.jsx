@@ -1,18 +1,26 @@
 import React from "react";
 
-const Cards = () => {
-  const techStack = ["React", "Node", "Express", "MongoDB"];
+const Cards = ({ title, techstack, description, githubUrl  }) => {
 
   return (
     <div className="border-2 text-white bg-black  border-white rounded-lg max-w-md p-5 ">
       <div className="border-b-2 py-4 flex flex-col justify-start ">
-        <div className="font-poppins text-2xl font-light">project name</div>
+        <div className="font-poppins text-2xl font-light">
+        
+        {githubUrl && (
+          <a 
+            href={githubUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"           >
+          {title}
+          </a>
+        )}</div>
         <div>
           <ul className="  text-black  flex gap-2 flex-row text-justify mt-2 justify-start ">
-            {techStack &&
-              techStack.map((techStack, i) => (
-                <li key={i} className="bg-white rounded-md p-1 text-sm ">
-                  {techStack}
+          {techstack &&
+              techstack.map((tech, i) => (
+                <li key={i} className="bg-white rounded-md p-1 text-sm">
+                  {tech}
                 </li>
               ))}
           </ul>
@@ -20,13 +28,7 @@ const Cards = () => {
       </div>
       <div className="w-full ">
         <p className="border-2 border-white rounded-lg p-2 mt-2 ">
-          {" "}
-          Lorem ipsum dolor sit amet. Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Iure assumenda aut laboriosam sint temporibus
-          molestias necessitatibus rerum voluptate, natus velit nisi at tempore
-          repellat, aliquam sit quaerat sapiente quas! Hic nesciunt at,
-          voluptate officia ullam nobis ad voluptatibus porro minus in eaque.
-          Iure, esse explicabo{" "}
+        {description}
         </p>
       </div>
     </div>

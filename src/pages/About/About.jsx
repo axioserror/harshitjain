@@ -8,9 +8,7 @@ const About = () => {
     "TypeScript",
     "React.js",
     "Node.js",
-    "Angular",
-    "MongoDB",
-    "ASP.NET",
+    "MongoDB","Restful API",  "MLOps", "Python", "Java", "C++", "HTML/CSS"," Linux", "GitHub","Jupyter", "Google Cloud Platform",
   ];
   return (
     <section className="text-white mb-5" id="about">
@@ -55,7 +53,7 @@ const About = () => {
           </p>
           <br />
           <h3 className=" font-light font-poppins text-xl ">Skills:</h3>
-          <ul className=" mx-10 text-justify grid grid-rows-4 grid-cols-2 w-1/2  gap-2 ">
+          <ul className=" mx-10 text-justify text-nowrap grid grid-rows-3 grid-cols-4 w-2/2 gap-2 ">
             {skills &&
               skills.map((skill, i) => (
                 <li

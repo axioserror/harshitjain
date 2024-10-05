@@ -1,49 +1,85 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cards from "./Cards";
-
 const Carousel = () => {
   const [activeItem, setActiveItem] = useState(0);
+  const [jobsData, setJobsData] = useState([]);
 
+  useEffect(() => {
+    const fetchJobsData = async () => {
+      const jobFolders = ['drdo', 'rategain'];
+      try {
+        const jobs = await Promise.all(
+          jobFolders.map(async (folder) => {
+            const response = await fetch(`/content/jobs/${folder}/index.md`);
+            const text = await response.text();
+            
+            const lines = text.split('\n').filter(line => line.trim() !== '');
+            let job = {
+              title: '',
+              company: '',
+              location: '',
+              date: '',
+              description: []
+            };
+
+            lines.forEach(line => {
+              if (line.startsWith('# ')) {
+                job.title = line.replace('# ', '');
+              } else if (line.startsWith('## ')) {
+                job.company = line.replace('## ', '');
+              } else if (line.startsWith('### ')) {
+                job.location = line.replace('### ', '');
+              } else if (line.startsWith('#### ')) {
+                job.date = line.replace('#### ', '');
+              } else if (line.startsWith('- ')) {
+                job.description.push(line.replace('- ', ''));
+              }
+            });
+
+            return job;
+          })
+        );
+        setJobsData(jobs);
+      } catch (error) {
+        console.error('Error fetching job data:', error);
+      }
+    };
+
+    fetchJobsData();
+  }, []);
   const handlePrev = () => {
-    setActiveItem((prev) => (prev === 0 ? 1 : 0));
+    setActiveItem((prev) => (prev === 0 ? jobsData.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setActiveItem((prev) => (prev === 1 ? 0 : 1));
+    setActiveItem((prev) => (prev === jobsData.length - 1 ? 0 : prev + 1));
   };
 
   return (
     <div id="indicators-carousel" className="relative w-full">
       {/* Carousel wrapper */}
-      <div className="relative overflow-hidden rounded-lg ">
-        {/* Item 1 */}
-        <div className={`duration-700 ease-in-out ${activeItem === 0 ? 'block' : 'hidden'}`}>
-          <Cards />
-        </div>
-        {/* Item 2 */}
-        <div className={`duration-700 ease-in-out ${activeItem === 1 ? 'block' : 'hidden'}`}>
-          <Cards />
-        </div>
+      <div className="relative overflow-hidden rounded-lg">
+        {jobsData.map((job, index) => (
+          <div key={index} className={`duration-700 ease-in-out ${activeItem === index ? 'block' : 'hidden'}`}>
+            <Cards {...job} />
+          </div>
+        ))}
       </div>
 
       {/* Control container */}
       <div className="flex justify-between items-center mt-4">
         {/* Slider indicators */}
         <div className="flex space-x-3">
-          <button
-            type="button"
-            className={`w-3 h-3 rounded-full ${activeItem === 0 ? 'bg-white' : 'bg-gray-300'}`}
-            aria-current={activeItem === 0}
-            aria-label="Slide 1"
-            onClick={() => setActiveItem(0)}
-          ></button>
-          <button
-            type="button"
-            className={`w-3 h-3 rounded-full ${activeItem === 1 ? 'bg-white' : 'bg-gray-300'}`}
-            aria-current={activeItem === 1}
-            aria-label="Slide 2"
-            onClick={() => setActiveItem(1)}
-          ></button>
+          {jobsData.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              className={`w-3 h-3 rounded-full ${activeItem === index ? 'bg-white' : 'bg-gray-300'}`}
+              aria-current={activeItem === index}
+              aria-label={`Slide ${index + 1}`}
+              onClick={() => setActiveItem(index)}
+            ></button>
+          ))}
         </div>
 
         {/* Slider controls */}

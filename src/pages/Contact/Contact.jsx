@@ -1,14 +1,90 @@
 import React, { useState, useEffect } from "react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { SiLeetcode, SiCodeforces, SiCodechef } from "react-icons/si";
 import "./Contact.css";
 const Contact = () => {
+  
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const email="harshitjain20apr@gmail.com"; 
   const [message, setMessage] = useState("");
+  const [senderEmail, setSenderEmail] = useState("");
   const [scrollIndex, setScrollIndex] = useState(0);
-
   const contactInfo = [
     {
-      title: "HELLO@EXAMPLE.COM",
+      title: "ABOUT ME",
+      details: [
+        "Name: Harshit Jain",
+        "Email: harshitjain20apr@gmail.com",
+        "Phone: 9837374949",
+      ],
+    },
+    {
+      title: "PROFESSIONAL PROFILES",
+      details: [
+        <span>
+          LinkedIn: 
+          <a
+            href="https://www.linkedin.com/in/your-profile/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 text-white"
+          >
+            <FaLinkedin />
+          </a>
+        </span>,
+        <span>
+          GitHub: 
+          <a
+            href="https://github.com/your-profile/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 text-white"
+          >
+            <FaGithub />
+          </a>
+        </span>,
+      ],
+    },
+    {
+      title: "COMPETITIVE PROGRAMMING",
+      details: [
+        <span>
+          LeetCode: 
+          <a
+            href="https://leetcode.com/your-profile/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 text-white  "
+          >
+            <SiLeetcode />
+          </a>
+        </span>,
+        <span>
+          Codeforces: 
+          <a
+            href="https://codeforces.com/profile/your-profile/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 text-white "
+          >
+            <SiCodeforces />
+          </a>
+        </span>,
+        <span>
+          CodeChef: 
+          <a
+            href="https://www.codechef.com/users/your-profile/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 text-white"
+          >
+            <SiCodechef />
+          </a>
+        </span>,
+      ],
+    },
+    {
+      title: "CONTACT ME",
       details: [
         "Want to discuss something?",
         "Need advice?",
@@ -16,26 +92,27 @@ const Contact = () => {
       ],
     },
     {
-      title: "NEWBIZ@EXAMPLE.COM",
+      title: "BUSINESS INQUIRIES",
       details: [
         "Have a project in mind?",
         "Looking for a partner?",
-        "Want to collab?",
+        "Want to collaborate?",
       ],
     },
     {
-      title: "JOIN@EXAMPLE.COM",
+      title: "JOIN MY TEAM",
       details: [
-        "If you want to join our team and work with us on exciting projects, tell us your story.",
+        "If you want to join my team and work on exciting projects, tell me your story.",
       ],
     },
     {
-      title: "CONTACT",
+      title: "GENERAL CONTACT",
       details: [
-        "Don't hesitate to reach out. We usually respond within 24 hours unless it's a holiday.",
+        "Don't hesitate to reach out. I usually respond within 24 hours unless it's a holiday.",
       ],
     },
   ];
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,21 +121,22 @@ const Contact = () => {
     return () => clearInterval(interval);
   }, []);
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Create the mailto link
-    const recipientEmail = `${email}`;
+    // Create the mailto link using the manually entered recipient email
     const subject = `Message from ${name}`;
-    const body = `Hi, my name is ${name},\n\n${message}\n\nYou can contact me at: ${email}`;
+    const body = `Hi, my name is ${name},\n\n${message}\n\nYou can contact me at: ${senderEmail}`;
 
     // Construct the mailto URL
-    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
   };
+
 
   return (
     <section id="contact">
@@ -92,8 +170,8 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={senderEmail}
+                  onChange={(e) => setSenderEmail(e.target.value)}
                   className="w-full p-1 bg-transparent border-b border-black"
                   required
                 />
@@ -120,7 +198,7 @@ const Contact = () => {
           </form>
         </div>
 
-        <div className="w-1/2 order-first md:order-last p-8 flex flex-col justify-center overflow-hidden contact-scroll">
+        <div className="md:w-1/2 w-full order-first md:order-last p-8 flex flex-col justify-center overflow-hidden contact-scroll">
           <div className="contact-scroll-content">
             {contactInfo.map((info, index) => (
               <div

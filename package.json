@@ -10,10 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
+    "darkmatter": "^1.1.2",
+    "front-matter": "^4.0.2",
+    "frontmatter": "^0.0.3",
+    "gray-matter": "^4.0.3",
+    "marked": "^14.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
-    "split-grid": "^1.0.11"
+    "split-grid": "^1.0.11",
+    "vite-plugin-node-polyfills": "^0.22.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
