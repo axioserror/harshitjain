@@ -1,8 +1,8 @@
-import React, { useEffect }  from "react";
+import React, { useEffect } from "react";
 import about from "../../assets/about.png";
 import { RxTriangleRight } from "react-icons/rx";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const About = () => {
   useEffect(() => {
     AOS.init({
@@ -15,7 +15,17 @@ const About = () => {
     "TypeScript",
     "React.js",
     "Node.js",
-    "MongoDB","Restful API",  "MLOps", "Python", "Java", "C++", "HTML/CSS"," Linux", "GitHub","Jupyter", "Google Cloud Platform",
+    "MongoDB",
+    "Restful API",
+    "MLOps",
+    "Python",
+    "Java",
+    "C++",
+    "HTML/CSS",
+    " Linux",
+    "GitHub",
+    "Jupyter",
+    "Google Cloud Platform",
   ];
   return (
     <section className="text-white mb-8" id="about" data-aos="fade-up">

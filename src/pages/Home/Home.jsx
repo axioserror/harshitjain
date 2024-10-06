@@ -52,8 +52,7 @@ const Home = () => {
                 <a
                   href={resumePDF}
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   Checkout my Resume
                 </a>
               </button>

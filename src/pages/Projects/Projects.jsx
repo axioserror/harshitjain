@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Cards from "./Cards";
 import ReactMarkdown from "react-markdown";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Projects = () => {
   useEffect(() => {
     AOS.init({
@@ -16,7 +16,9 @@ const Projects = () => {
       try {
         const projects = await Promise.all(
           projectFolders.map(async (folder) => {
-            const response = await fetch(`/content/ProjectsFile/${folder}/index.md`);
+            const response = await fetch(
+              `/content/ProjectsFile/${folder}/index.md`
+            );
             const text = await response.text();
             const lines = text.split("\n").filter((line) => line.trim() !== "");
             let project = {
@@ -39,7 +41,7 @@ const Projects = () => {
                   project.description.push(lines[i].replace("- ", ""));
                   i++;
                 }
-              }else if (line.startsWith("## GitHub URL")) {
+              } else if (line.startsWith("## GitHub URL")) {
                 // Extract the GitHub URL
                 const githubLine = lines[lines.indexOf(line) + 1];
                 project.githubUrl = githubLine.replace("- ", "").trim();
@@ -57,7 +59,11 @@ const Projects = () => {
     fetchProjectsData();
   }, []);
   return (
-    <section className=" bg-black h-max mt-8 text-white" id="projects" data-aos="fade-up">
+    <section
+      className=" bg-black h-max mt-8 text-white"
+      id="projects"
+      data-aos="fade-up"
+    >
       <p className=" ml-8 text-xs bg-white/65 p-2 rounded-xl w-fit text-white">
         ⚪ Projects
       </p>
@@ -67,8 +73,8 @@ const Projects = () => {
         </div>
         <div className="flex flex-row justify-around">
           <p className="font-inconsolata-normal text-xs md:w-1/3 w-24 text-justify  ">
-          Here's a showcase of my recent projects, demonstrating my skills and expertise in various technologies.
-
+            Here's a showcase of my recent projects, demonstrating my skills and
+            expertise in various technologies.
           </p>
         </div>
       </div>
