@@ -39,7 +39,7 @@ const Nav = () => {
         <img src={logo} alt='Harshit Jain' className='h-10 mt-4 ml-8' />
       </div>
 
-      <ul className='nav-routes text-white flex flex-row justify-center lg:justify-end md:justify-between sm:justify-between gap-4 md:gap-6 lg:gap-14 font-bold text-xs px-4 md:px-6 lg:px-10 w-full'>
+      <ul className='nav-routes text-white flex flex-row justify-evenly  lg:justify-end md:justify-between sm:justify-between gap-4 md:gap-6 lg:gap-14 font-bold text-xs px-4 md:px-6 lg:px-10 w-full'>
         <a href="#Home">
           <li className={`p-1 ${activeSection === '#home' ? 'border-b-2 border-white' : ''} hover:border-b-2 hover:border-dotted hover:border-white`}>
             HOME

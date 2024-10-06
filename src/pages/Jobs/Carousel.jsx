@@ -57,7 +57,7 @@ const Carousel = () => {
   };
 
   return (
-    <div id="indicators-carousel" className="relative w-full">
+    <div id="indicators-carousel" className="relative w-full  ">
       {/* Carousel wrapper */}
       <div className="relative rounded-lg">
         {jobsData.map((job, index) => (
@@ -68,7 +68,7 @@ const Carousel = () => {
       </div>
 
       {/* Control container */}
-      <div className="flex justify-between items-center mt-4 md:gap-0 gap-96">
+      <div className="flex md:justify-between justify-around w-full items-center  mt-4 gap-0 ">
         {/* Slider indicators */}
         <div className="flex space-x-3">
           {jobsData.map((_, index) => (

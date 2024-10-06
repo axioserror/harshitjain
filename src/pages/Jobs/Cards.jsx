@@ -2,7 +2,7 @@ import React from 'react';
 
 const Cards = ({ title, company,location,date, description }) => {
   return (
-    <div className='w-fit p-9 border-2 mt-4 rounded-xl border-white bg-black text-white'>
+    <div className='w-fit p-9 border-2 md:mt-4 mt-16 mx-auto rounded-xl border-white bg-black text-white'>
       <div className='border-b-2 py-2 flex flex-row justify-between gap-20 items-center'>
         <div>
           <h1 className='font-poppins text-xl font-medium'>{title}</h1>
