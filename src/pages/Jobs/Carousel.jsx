@@ -7,7 +7,7 @@ const Carousel = () => {
 
   useEffect(() => {
     const fetchJobsData = async () => {
-      const jobFolders = ['drdo', 'rategain'];
+      const jobFolders = ['DRDO', 'RateGain'];
       try {
         const jobs = await Promise.all(
           jobFolders.map(async (folder) => {

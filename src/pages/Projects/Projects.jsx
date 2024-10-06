@@ -12,7 +12,7 @@ const Projects = () => {
   const [projectsData, setProjectsData] = useState([]);
   useEffect(() => {
     const fetchProjectsData = async () => {
-      const projectFolders = ["Expensetracker", "faqchatbot", "stockmarket"];
+      const projectFolders = ["ExpenseTracker", "FAQChatbot", "StockMarket"];
       try {
         const projects = await Promise.all(
           projectFolders.map(async (folder) => {
