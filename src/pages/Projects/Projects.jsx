@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cards from "./Cards";
+import ReactMarkdown from "react-markdown";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const Projects = () => {
@@ -15,7 +16,7 @@ const Projects = () => {
       try {
         const projects = await Promise.all(
           projectFolders.map(async (folder) => {
-            const response = await fetch(`../../../content/ProjectsFile/${folder}/index.md`);
+            const response = await fetch(`/content/ProjectsFile/${folder}/index.md`);
             const text = await response.text();
             const lines = text.split("\n").filter((line) => line.trim() !== "");
             let project = {

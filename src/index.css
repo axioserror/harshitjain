@@ -3,6 +3,7 @@
 @tailwind utilities;
 html {
     scroll-behavior: smooth;
+    min-width: min-content;    
   }
   
 body {
