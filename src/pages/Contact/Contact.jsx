@@ -147,7 +147,7 @@ const Contact = () => {
         <div className="md:w-1/2  p-8 flex flex-col justify-center items-center">
           <form
             onSubmit={handleSubmit}
-            className="p-6 font-inconsolata md:w-3/4 w-full  text-base font-medium bg-white/85  rounded-lg text-black"
+            className="p-6 font-inconsolata md:w-3/4 w-2/4  text-base font-medium bg-white/85  rounded-lg text-black"
           >
             <div>
               <label htmlFor="name" className="block text-lg">
@@ -198,12 +198,12 @@ const Contact = () => {
           </form>
         </div>
 
-        <div className="md:w-1/2 w-full order-first md:order-last p-8 flex flex-col justify-center overflow-visible md:overflow-hidden contact-scroll">
+        <div className="md:w-1/2 w-full order-first md:order-last p-8 flex flex-col justify-center md:overflow-visible md:overflow-y-hidden contact-scroll">
           <div className="contact-scroll-content">
             {contactInfo.map((info, index) => (
               <div
                 key={info.title}
-                className="md:h-fit md:p-6  h-64 flex-shrink-0 flex flex-col justify-center"
+                className="md:h-fit md:p-6  h-56  flex-shrink-0 flex flex-col justify-center"
               >
                 <h3 className="text-xl font-bold mb-2">{info.title}</h3>
                 {info.details.map((detail, i) => (
