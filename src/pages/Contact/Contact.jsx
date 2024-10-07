@@ -204,7 +204,7 @@ const Contact = () => {
           </form>
         </div>
 
-        <div className="md:w-1/2 w-full h-96 order-first md:order-last p-8 flex flex-col justify-center md:overflow-visible md:overflow-y-hidden contact-scroll">
+        <div className="md:w-1/2 w-full pt-96 h-96 order-first md:order-last p-8 flex flex-col justify-center md:overflow-visible md:overflow-y-hidden contact-scroll">
           <div className="contact-scroll-content">
             {contactInfo.map((info, index) => (
               <div
