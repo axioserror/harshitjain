@@ -40,7 +40,7 @@ const Nav = () => {
       </div>
 
       <ul className='nav-routes text-white flex flex-row justify-evenly  lg:justify-end md:justify-between sm:justify-between gap-4 md:gap-6 lg:gap-14 font-bold text-xs px-4 md:px-6 lg:px-10 w-full'>
-        <a href="#Home">
+        <a href="#home">
           <li className={`p-1 ${activeSection === '#home' ? 'border-b-2 border-white' : ''} hover:border-b-2 hover:border-dotted hover:border-white`}>
             HOME
           </li>

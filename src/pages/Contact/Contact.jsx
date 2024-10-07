@@ -2,10 +2,18 @@ import React, { useState, useEffect } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiLeetcode, SiCodeforces, SiCodechef } from "react-icons/si";
 import "./Contact.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+ 
 const Contact = () => {
-  
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // Animation duration
+    });
+  }, []);
   const [name, setName] = useState("");
-  const email="harshitjain20apr@gmail.com"; 
+  const email = "harshitjain20apr@gmail.com";
   const [message, setMessage] = useState("");
   const [senderEmail, setSenderEmail] = useState("");
   const [scrollIndex, setScrollIndex] = useState(0);
@@ -22,24 +30,24 @@ const Contact = () => {
       title: "PROFESSIONAL PROFILES",
       details: [
         <span>
-          LinkedIn: 
           <a
             href="https://www.linkedin.com/in/your-profile/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 text-white"
+            className="ml-2 text-white flex flex-row gap-4 items-center"
           >
+            LinkedIn:
             <FaLinkedin />
           </a>
         </span>,
         <span>
-          GitHub: 
           <a
             href="https://github.com/your-profile/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 text-white"
+            className="ml-2 text-white flex flex-row gap-4 items-center"
           >
+            GitHub:
             <FaGithub />
           </a>
         </span>,
@@ -49,35 +57,36 @@ const Contact = () => {
       title: "COMPETITIVE PROGRAMMING",
       details: [
         <span>
-          LeetCode: 
           <a
             href="https://leetcode.com/your-profile/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 text-white  "
+            className="ml-2 text-white flex flex-row gap-4 items-center "
           >
+            LeetCode:
             <SiLeetcode />
           </a>
         </span>,
         <span>
-          Codeforces: 
           <a
             href="https://codeforces.com/profile/your-profile/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 text-white "
+            className="ml-2 text-white flex flex-row gap-4 items-center "
           >
+            Codeforces:
             <SiCodeforces />
           </a>
         </span>,
         <span>
-          CodeChef: 
+          {" "}
           <a
             href="https://www.codechef.com/users/your-profile/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 text-white"
+            className="ml-2 text-white flex flex-row gap-4 items-center"
           >
+            CodeChef:
             <SiCodechef />
           </a>
         </span>,
@@ -113,7 +122,6 @@ const Contact = () => {
     },
   ];
 
-
   useEffect(() => {
     const interval = setInterval(() => {
       setScrollIndex((prevIndex) => (prevIndex + 1) % contactInfo.length);
@@ -121,7 +129,6 @@ const Contact = () => {
     return () => clearInterval(interval);
   }, []);
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -137,13 +144,12 @@ const Contact = () => {
     window.location.href = mailtoLink;
   };
 
-
   return (
-    <section id="contact" className="w-full">
+    <section id="contact" className="w-full" data-aos="fade-up">
       <p className="mt-8 ml-8 text-xs bg-white/65 p-2 rounded-xl w-fit text-white">
         ⚪ Contact Me
       </p>
-      <div className="flex md:flex-row flex-col h-screen m-8 min-w-full bg-black text-white">
+      <div className="flex md:flex-row flex-col items-center h-screen m-8 min-w-full bg-black text-white">
         <div className="md:w-1/2  p-8 flex flex-col justify-center items-center">
           <form
             onSubmit={handleSubmit}
@@ -198,7 +204,7 @@ const Contact = () => {
           </form>
         </div>
 
-        <div className="md:w-1/2 w-full order-first md:order-last p-8 flex flex-col justify-center md:overflow-visible md:overflow-y-hidden contact-scroll">
+        <div className="md:w-1/2 w-full h-96 order-first md:order-last p-8 flex flex-col justify-center md:overflow-visible md:overflow-y-hidden contact-scroll">
           <div className="contact-scroll-content">
             {contactInfo.map((info, index) => (
               <div

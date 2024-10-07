@@ -78,7 +78,7 @@ const Projects = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-row flex-wrap gap-6 py-8 px-32">
+      <div className="flex flex-row flex-wrap justify-center gap-6 py-8 px-32">
         {projectsData.map((project, index) => (
           <Cards key={index} {...project} />
         ))}

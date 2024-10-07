@@ -11,7 +11,7 @@ const Jobs = () => {
   }, []);
   return (
     <section 
-    className='h-screen bg-black  mt-8 md:mb-8 mb-28 text-white w-full' 
+    className=' bg-black  mt-8 md:mb-8 mb-28 text-white w-full' 
     id='jobs' 
     data-aos="fade-up">
        <p className=" ml-8 text-xs bg-white/65 p-2 rounded-xl w-fit text-white">⚪ Wrok Experience</p>
