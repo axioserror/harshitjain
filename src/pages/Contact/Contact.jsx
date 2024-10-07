@@ -150,10 +150,10 @@ const Contact = () => {
         ⚪ Contact Me
       </p>
       <div className="flex md:flex-row flex-col items-center h-screen m-8 min-w-full bg-black text-white">
-        <div className="md:w-3/4 w-3/4  p-8 flex flex-col justify-center items-center">
+        <div className="md:w-1/2 w-3/4  p-8 flex flex-col justify-center items-center">
           <form
             onSubmit={handleSubmit}
-            className="p-6 font-inconsolata md:w-3/4 w-2/4  text-base font-medium bg-white/85  rounded-lg text-black"
+            className="p-6 font-inconsolata md:w-3/4 w-3/4  text-base font-medium bg-white/85  rounded-lg text-black"
           >
             <div>
               <label htmlFor="name" className="block text-lg">
