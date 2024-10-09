@@ -34,25 +34,26 @@ const Home = () => {
       {/* Content overlay */}
       <div className="relative z-10 min-h-screen p-4 md:p-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div className="md:col-span-8 z-30 bg-black p-4 md:p-8">
-            <h1 className="text-3xl md:text-5xl font-bold font-poppins mb-4 mt-4 md:mt-8 w-fit">
+          <div className="md:col-span-8 z-30 bg-black p-20 md:p-8 w-fit">
+            <h1 className="text-3xl md:text-5xl font-bold font-poppins mb-4 mt-4 text-wrap md:mt-8 w-fit">
               The world's best engineers<br />
               need the world's hardest problems
             </h1>
           </div>
           <div className="md:col-span-4"></div>
-          <div className="md:col-span-8 md:col-start-1 md:row-start-2"></div>
-          <div className="md:col-span-4 md:col-start-9 md:row-start-2 bg-black p-6 py-8 md:p-8">
-            <p className="mb-4 text-white bg-black font-inconsolata text-sm md:text-base">
-              Our company helps build AI-enabled engineering teams towards solving their 
+          <div className="md:col-span-8 md:col-start-1 md:row-start-2 "></div>
+          <div className="md:col-span-4 md:col-start-9 md:row-start-2 bg-black p-6 py-20 md:p-8 w-fit px-12">
+            <p className="mb-4 text-white bg-black text-wrap font-inconsolata text-sm md:text-base">
+              Our company helps build AI-enabled engineering teams towards solving their<br/> 
               most difficult technical and product challenges.
             </p>
             <div className="space-y-2 flex flex-col md:flex-row gap-4">
-              <button className='w-1/3 md:w-2/3 border border-white px-4 py-2 hover:bg-white hover:text-black transition-colors text-center text-sm md:text-base'>
+              <button className='w-fit  border border-white px-4 py-2 text-nowrap hover:bg-white hover:text-black transition-colors text-center text-sm md:text-base'>
                 <a
                   href={resumePDF}
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                 >
                   Checkout my Resume
                 </a>
               </button>

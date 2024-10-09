@@ -3,7 +3,7 @@ import React from "react";
 const Cards = ({ title, techstack, description, githubUrl  }) => {
 
   return (
-    <div className="border-2 text-white bg-black min-w-96 md:max-w-md border-white rounded-lg  p-5 ">
+    <div className="border-2 text-white bg-black min-w-96 aspect-video max-w-md border-white rounded-lg  p-5 ">
       <div className="border-b-2 py-4 flex flex-col justify-start ">
         <div className="font-poppins text-2xl font-light">
         
@@ -27,7 +27,7 @@ const Cards = ({ title, techstack, description, githubUrl  }) => {
         </div>
       </div>
       <div className="w-full ">
-        <p className="border-2  border-white rounded-lg p-2 mt-2 ">
+        <p className="border-2  border-white rounded-lg p-2 mt-6 ">
         {description}
         </p>
       </div>

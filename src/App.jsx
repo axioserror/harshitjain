@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Loader from "./pages/Loader/Loader";
 import "./App.css";
 import Home from "./pages/Home/Home";
 import Nav from "./pages/Nav/Nav";
@@ -8,15 +9,33 @@ import Contact from "./pages/Contact/Contact";
 import Projects from "./pages/Projects/Projects";
 import Acvm from "./pages/Achievements/Acvm";
 function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoading(false);
+    };
+    window.addEventListener("load", handleLoad);
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
   return (
     <>
-      <Nav />
-      <Home />
-      <About />
-      <Jobs />
-      <Projects />
-      <Acvm />
-      <Contact />
+      {" "}
+      {loading ? (
+        <Loader />
+      ) : (
+        <div>
+          <Nav />
+          <Home />
+          <About />
+          <Jobs />
+          <Projects />
+          <Acvm />
+          <Contact />
+        </div>
+      )}
     </>
   );
 }
