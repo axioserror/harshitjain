@@ -25,7 +25,7 @@ const About = () => {
     " Linux",
     "GitHub",
     "Jupyter",
-    "Google Cloud Platform",
+    "GCP",
   ];
   return (
     <section className="text-white mb-8" id="about" data-aos="fade-up">
