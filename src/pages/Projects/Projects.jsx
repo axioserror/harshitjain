@@ -67,7 +67,7 @@ const Projects = () => {
       <p className=" ml-8 text-xs bg-white/65 p-2 rounded-xl w-fit text-white">
         ⚪ Projects
       </p>
-      <div className="font-poppins text-xl text-wrap py-8 md:px-32 px-16 flex flex-row w-fit items-center justify-between gap-10  md:gap-0">
+      <div className="font-poppins text-xl text-wrap py-8 md:px-32  flex flex-col md:flex-row w-fit items-center justify-between gap-10  md:gap-0">
         <div>
           <h1 className="text-3xl">Lorem ipsum dolor sit amet consectetur.</h1>
         </div>
