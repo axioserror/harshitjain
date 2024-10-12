@@ -9,7 +9,7 @@ const Cards = ({ title, company,location,date, description }) => {
           <p className='text-black my-2 bg-white w-fit px-2 rounded-sm text-base font-semibold font-inconsolata-wide text-nowrap'>{company}</p>
         </div>
         <div className='flex flex-col items-start gap-2 p-2 justify-start'>
-          <p className='bg-white text-black p-1 rounded-md font-inconsolata-condensed text-nowrap font-medium'>{location}</p>
+          <p className='bg-white text-black p-1 rounded-sm font-inconsolata-condensed text-nowrap font-medium'>{location}</p>
           <p>{date}</p>
         </div>
       </div>
