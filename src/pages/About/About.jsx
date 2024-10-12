@@ -40,7 +40,7 @@ const About = () => {
             className=" rounded-lg shadow-md shadow-slate-200/10 mb-6 "
           />
         </div>
-        <div className="md:w-1/2 w-3/4 ">
+        <div className="md:w-1/2 w-4/5 ">
           <h1 className="font-normal text-6xl font-poppins p-4 text-center">
             Harshit Jain
           </h1>
@@ -70,7 +70,7 @@ const About = () => {
           </p>
           <br />
           <h3 className=" font-light font-poppins text-xl ">Skills:</h3>
-          <ul className="md:mx-10 text-justify text-nowrap grid md:grid-rows-3 grid-rows-7 md:grid-cols-4 grid-cols-3 md:w-2/2 md:gap-2 md:gap-x-2 gap-x-32">
+          <ul className="md:mx-10 text-justify text-nowrap grid md:grid-rows-3 grid-rows-7 md:grid-cols-4 grid-cols-3 md:w-2/2 md:gap-2 md:gap-x-2 gap-x-36">
             {skills &&
               skills.map((skill, i) => (
                 <li
