@@ -72,7 +72,7 @@ const Projects = () => {
           <h1 className="text-3xl">Lorem ipsum dolor sit amet consectetur.</h1>
         </div>
         <div className="flex flex-row justify-around">
-          <p className="font-inconsolata-normal text-xs md:w-1/3 w-24 text-justify  ">
+          <p className="font-inconsolata-normal text-xs md:w-1/3 w-32 text-justify  ">
             Here's a showcase of my recent projects, demonstrating my skills and
             expertise in various technologies.
           </p>
