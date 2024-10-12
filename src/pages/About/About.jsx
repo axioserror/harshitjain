@@ -70,7 +70,7 @@ const About = () => {
           </p>
           <br />
           <h3 className=" font-light font-poppins text-xl ">Skills:</h3>
-          <ul className="md:mx-8 text-justify text-nowrap grid md:grid-rows-3 grid-rows-6 md:grid-cols-4 grid-cols-3 md:w-2/2 md:gap-2 md:gap-x-2 gap-x-36">
+          <ul className="md:mx-6 text-justify text-nowrap grid md:grid-rows-3 grid-rows-7 md:grid-cols-4 grid-cols-3 md:w-2/2 md:gap-2 md:gap-x-2 gap-x-36">
             {skills &&
               skills.map((skill, i) => (
                 <li
